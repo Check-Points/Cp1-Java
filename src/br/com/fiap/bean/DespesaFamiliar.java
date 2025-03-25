@@ -5,19 +5,18 @@
 package br.com.fiap.bean;
 
 public class DespesaFamiliar {
-    public double rendaFamiliar, gastoComLuz, gastoComAgua, gastoComInternet, valorMensalidadeDaAcademia;
+    public double rendaFamiliarBruta, totalDasDespesas, rendaFamiliarLiquida, gastoComLuz, gastoComAgua, gastoComInternet, valorMensalidadeDaAcademia;
     public int numeroDeMoradores;
 
-    public double calcularTotalDeDespesas() {
+    public double CalcularTotalDeDespesas() {
+        totalDasDespesas = gastoComLuz + gastoComAgua + gastoComInternet + (valorMensalidadeDaAcademia * numeroDeMoradores);
 
-
-        return
+        return totalDasDespesas;
     }
 
-    public double calcularRendaFamiliar() {
-
-
-        return
+    public double CalcularRendaFamiliarLiquida() {
+        rendaFamiliarLiquida -= totalDasDespesas;
+        return rendaFamiliarLiquida;
     }
 
 }
