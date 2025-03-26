@@ -1,6 +1,6 @@
-//RM: 554682 - Milena Codinhoto
-//RM: 557929 - Evellyn Choque
-//RM: 86833 - Carolina Santana
+//RM: 554682 - Milena Codinhoto da Silva
+//RM: 557929 - Evellyn Valencia Choque
+//RM: 86833 - Carolina Santana Ferraz
 
 package br.com.fiap.main;
 
@@ -14,23 +14,30 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         DespesaFamiliar despesa = new DespesaFamiliar();
 
-
-
+         double rendaFamiliarBruta, gastoComLuz, gastoComAgua, gastoComInternet, valorMensalidadeDaAcademia;
+         int numeroDeMoradores;
         try {
             System.out.println("Digite sua renda familiar");
-            despesa.rendaFamiliarBruta = scan.nextDouble();
+            rendaFamiliarBruta = scan.nextDouble();
             System.out.println("Digite o total de moradores da sua casa");
-            despesa.numeroDeMoradores = scan.nextInt();
+            numeroDeMoradores = scan.nextInt();
             System.out.println("Digite o preço da sua conta de água");
-            despesa.gastoComAgua = scan.nextDouble();
+            gastoComAgua = scan.nextDouble();
             System.out.println("Digite o preço da sua conta de luz");
-            despesa.gastoComLuz = scan.nextDouble();
+            gastoComLuz = scan.nextDouble();
             System.out.println("Digite o preço da sua conta de internet");
-            despesa.gastoComInternet = scan.nextDouble();
+            gastoComInternet = scan.nextDouble();
             System.out.println("Digite o preço da mensalidade da academia");
-            despesa.valorMensalidadeDaAcademia = scan.nextDouble();
+            valorMensalidadeDaAcademia = scan.nextDouble();
 
-            System.out.printf("Renda familiar bruto: %.3f \nTotal de gastos: %.3f \nRenda familiar líquida: %.3f", despesa.rendaFamiliarBruta, despesa.totalDasDespesas, despesa.rendaFamiliarLiquida);
+            despesa.rendaFamiliarBruta = rendaFamiliarBruta;
+            despesa.numeroDeMoradores = numeroDeMoradores;
+            despesa.gastoComAgua = gastoComAgua;
+            despesa.gastoComLuz = gastoComLuz;
+            despesa.gastoComInternet = gastoComInternet;
+            despesa.valorMensalidadeDaAcademia = valorMensalidadeDaAcademia;
+
+            System.out.printf("Renda familiar: R$ %.3f \nTotal de gastos: R$ %.3f \nRenda familiar líquida: R$ %.3f", rendaFamiliarBruta, despesa.CalcularTotalDeDespesas(), despesa.CalcularRendaFamiliarLiquida());
 
         } catch (Exception e) {
             System.out.println("Formato incorreto!");

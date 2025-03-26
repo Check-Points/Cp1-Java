@@ -1,6 +1,6 @@
-//RM: 554682 - Milena Codinhoto
-//RM: 557929 - Evellyn Choque
-//RM: 86833 - Carolina Santana
+//RM: 554682 - Milena Codinhoto da Silva
+//RM: 557929 - Evellyn Valencia Choque
+//RM: 86833 - Carolina Santana Ferraz
 
 package br.com.fiap.bean;
 
@@ -15,7 +15,7 @@ public class DespesaFamiliar {
     }
 
     public double CalcularRendaFamiliarLiquida() {
-        rendaFamiliarLiquida -= totalDasDespesas;
+        rendaFamiliarLiquida = rendaFamiliarBruta -  totalDasDespesas;
         return rendaFamiliarLiquida;
     }
 
